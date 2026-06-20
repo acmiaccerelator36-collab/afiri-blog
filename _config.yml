@@ -2,8 +2,7 @@ title: "スマホの正直話"
 description: "現役ケータイ販売員が教える、スマホ代の正しい見直し方"
 author: "現役販売員"
 url: ""
-baseurl: ""
-
+baseurl: "/afiri-blog"
 # ビルド設定
 markdown: kramdown
 highlighter: rouge
