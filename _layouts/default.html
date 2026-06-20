@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{% if page.title %}{{ page.title }} | {{ site.title }}{% else %}{{ site.title }}{% endif %}</title>
+  <meta name="description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
+  {% seo %}
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+  {% if site.google_analytics %}
+  <script async src="https://www.googletagmanager.com/gtag/js?id={{ site.google_analytics }}"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', '{{ site.google_analytics }}');
+  </script>
+  {% endif %}
+</head>
+<body>
+
+  <!-- ナビゲーションバー -->
+  <header class="navbar">
+    <div class="navbar-inner container">
+      <a href="{{ '/' | relative_url }}" class="navbar-logo">
+        <span class="logo-icon">📱</span>
+        <span class="logo-text">{{ site.title }}</span>
+      </a>
+      <nav class="navbar-nav" id="desktopNav">
+        <a href="{{ '/' | relative_url }}">ホーム</a>
+        <a href="{{ '/pages/sim-hikaku' | relative_url }}">格安SIM比較</a>
+        <a href="{{ '/pages/hikari-hikaku' | relative_url }}">光回線比較</a>
+        <a href="{{ '/pages/profile' | relative_url }}">プロフィール</a>
+      </nav>
+      <button class="nav-toggle" onclick="toggleNav()" aria-label="メニュー">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <nav class="mobile-nav" id="mobileNav">
+      <div class="container">
+        <a href="{{ '/' | relative_url }}">ホーム</a>
+        <a href="{{ '/pages/sim-hikaku' | relative_url }}">格安SIM比較</a>
+        <a href="{{ '/pages/hikari-hikaku' | relative_url }}">光回線比較</a>
+        <a href="{{ '/pages/profile' | relative_url }}">プロフィール</a>
+      </div>
+    </nav>
+  </header>
+
+  <!-- メインコンテンツ -->
+  <main class="site-main">
+    {{ content }}
+  </main>
+
+  <!-- フッター -->
+  <footer class="site-footer">
+    <div class="footer-inner container">
+      <div class="footer-brand">
+        <span class="logo-icon">📱</span>
+        <span class="footer-title">{{ site.title }}</span>
+        <p class="footer-desc">{{ site.description }}</p>
+      </div>
+      <div class="footer-links">
+        <div class="footer-col">
+          <p class="footer-col-title">コンテンツ</p>
+          <a href="{{ '/pages/sim-hikaku' | relative_url }}">格安SIM比較</a>
+          <a href="{{ '/pages/hikari-hikaku' | relative_url }}">光回線比較</a>
+        </div>
+        <div class="footer-col">
+          <p class="footer-col-title">サイト情報</p>
+          <a href="{{ '/pages/profile' | relative_url }}">プロフィール</a>
+          <a href="{{ '/pages/privacy' | relative_url }}">プライバシーポリシー</a>
+          <a href="{{ '/pages/contact' | relative_url }}">お問い合わせ</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container">
+        <p class="footer-note">※本サイトはアフィリエイト広告（成果報酬型）を利用しています。</p>
+        <p class="copyright">&copy; {{ 'now' | date: "%Y" }} {{ site.title }}. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="{{ '/assets/js/main.js' | relative_url }}"></script>
+</body>
+</html>

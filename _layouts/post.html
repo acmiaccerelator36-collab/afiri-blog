@@ -1,0 +1,54 @@
+---
+layout: default
+---
+<div class="post-wrap">
+  <article class="post">
+    <header class="post-header">
+      <div class="post-meta">
+        <span class="post-date">{{ page.date | date: "%Y年%m月%d日" }}</span>
+        {% if page.category %}<span class="post-category">{{ page.category }}</span>{% endif %}
+      </div>
+      <h1 class="post-title">{{ page.title }}</h1>
+      {% if page.description %}<p class="post-description">{{ page.description }}</p>{% endif %}
+    </header>
+
+    <div class="post-toc" id="toc">
+      <p class="toc-title">📋 この記事の目次</p>
+      <div id="toc-list"></div>
+    </div>
+
+    <div class="post-content">
+      {{ content }}
+    </div>
+
+    <footer class="post-footer">
+      <div class="post-disclaimer">
+        <p>※本記事はアフィリエイト広告を含みます。記載の料金・サービス内容は執筆時点のものです。最新情報は各社公式サイトをご確認ください。</p>
+      </div>
+      <div class="post-share">
+        <p>この記事が参考になったらシェアしてください</p>
+        <a href="https://twitter.com/intent/tweet?text={{ page.title | url_encode }}&url={{ page.url | absolute_url | url_encode }}" target="_blank" rel="noopener" class="share-btn share-twitter">X（Twitter）でシェア</a>
+      </div>
+    </footer>
+  </article>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const headings = document.querySelectorAll('.post-content h2, .post-content h3');
+  const tocList = document.getElementById('toc-list');
+  if (headings.length < 2) { document.getElementById('toc').style.display = 'none'; return; }
+  const ul = document.createElement('ul');
+  headings.forEach(function(h, i) {
+    h.id = 'heading-' + i;
+    const li = document.createElement('li');
+    const a = document.createElement('a');
+    a.href = '#heading-' + i;
+    a.textContent = h.textContent;
+    if (h.tagName === 'H3') li.style.paddingLeft = '1rem';
+    li.appendChild(a);
+    ul.appendChild(li);
+  });
+  tocList.appendChild(ul);
+});
+</script>

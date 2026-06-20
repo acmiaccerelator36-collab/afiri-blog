@@ -1,0 +1,94 @@
+---
+layout: default
+title: "スマホの正直話｜現役販売員が教えるスマホ代の見直し方"
+---
+
+<!-- ヒーローセクション -->
+<section class="hero">
+  <div class="hero-bg">
+    <img src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=1400&q=80&auto=format&fit=crop" alt="" class="hero-img" loading="eager">
+    <div class="hero-overlay"></div>
+  </div>
+  <div class="hero-content container">
+    <p class="hero-label">現役ケータイ販売員が正直に解説</p>
+    <h1 class="hero-title">スマホ代、<br>見直しませんか？</h1>
+    <p class="hero-sub">「何となく高い」を、正しい基準で解決する。<br>格安SIM・光回線の選び方を忖度なしでお伝えします。</p>
+    <div class="hero-btns">
+      <a href="{{ '/pages/sim-hikaku' | relative_url }}" class="btn btn-white">格安SIM比較を見る</a>
+      <a href="{{ '/pages/hikari-hikaku' | relative_url }}" class="btn btn-outline-white">光回線比較を見る</a>
+    </div>
+  </div>
+</section>
+
+<!-- 特徴セクション -->
+<section class="features-section">
+  <div class="container">
+    <div class="features-grid">
+      <div class="feature-card">
+        <div class="feature-icon">🏪</div>
+        <h3>現役販売員の視点</h3>
+        <p>店頭で培った知識をもとに、実際の選び方の基準を解説します。</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">⚖️</div>
+        <h3>忖度なし比較</h3>
+        <p>特定のキャリアを無条件には推しません。状況に合った選択肢を提示します。</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">💡</div>
+        <h3>判断基準を提供</h3>
+        <p>「どれがいいか」ではなく「どう選ぶか」が分かる記事を目指しています。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- メイン記事セクション -->
+<section class="main-articles">
+  <div class="container">
+    <h2 class="section-heading">まずはここから</h2>
+    <div class="article-cards">
+      <a href="{{ '/pages/sim-hikaku' | relative_url }}" class="article-card">
+        <div class="article-card-img">
+          <img src="https://images.unsplash.com/photo-1556656793-08538906a9f8?w=600&q=80&auto=format&fit=crop" alt="格安SIM比較" loading="lazy">
+        </div>
+        <div class="article-card-body">
+          <span class="article-tag">格安SIM</span>
+          <h3>格安SIM比較｜現役販売員が選ぶおすすめと失敗しない選び方</h3>
+          <p>乗り換えるべき人・そうでない人から、選び方の基準まで正直に解説します。</p>
+          <span class="article-card-link">記事を読む →</span>
+        </div>
+      </a>
+      <a href="{{ '/pages/hikari-hikaku' | relative_url }}" class="article-card">
+        <div class="article-card-img">
+          <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=600&q=80&auto=format&fit=crop" alt="光回線比較" loading="lazy">
+        </div>
+        <div class="article-card-body">
+          <span class="article-tag">光回線</span>
+          <h3>光回線比較｜失敗しない選び方と格安SIMとの組み合わせ節約術</h3>
+          <p>エリア・工事・契約縛りの3点から正しく選ぶ方法を解説します。</p>
+          <span class="article-card-link">記事を読む →</span>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- 新着記事 -->
+<section class="recent-posts">
+  <div class="container">
+    <h2 class="section-heading">新着記事</h2>
+    <div class="post-list">
+      {% for post in site.posts limit:6 %}
+      <a href="{{ post.url | relative_url }}" class="post-row">
+        <div class="post-row-meta">
+          <span class="post-row-date">{{ post.date | date: "%Y.%m.%d" }}</span>
+          {% if post.category %}<span class="post-row-cat">{{ post.category }}</span>{% endif %}
+        </div>
+        <p class="post-row-title">{{ post.title }}</p>
+      </a>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+

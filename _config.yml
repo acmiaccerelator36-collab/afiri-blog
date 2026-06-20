@@ -1,0 +1,33 @@
+title: "スマホの正直話"
+description: "現役ケータイ販売員が教える、スマホ代の正しい見直し方"
+author: "現役販売員"
+url: ""
+baseurl: ""
+
+# ビルド設定
+markdown: kramdown
+highlighter: rouge
+permalink: /:year/:month/:day/:title/
+
+# プラグイン
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-seo-tag
+
+# 除外ファイル
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+
+# ページネーション
+paginate: 10
+paginate_path: "/page/:num/"
+
+# SNS設定（後で埋める）
+twitter_username: ""
+tiktok_url: ""
+
+# Google Analytics（後で埋める）
+google_analytics: ""
