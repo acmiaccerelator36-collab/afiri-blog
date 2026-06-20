@@ -21,7 +21,6 @@
 </head>
 <body>
 
-  <!-- ナビゲーションバー -->
   <header class="navbar">
     <div class="navbar-inner container">
       <a href="{{ '/' | relative_url }}" class="navbar-logo">
@@ -48,17 +47,17 @@
     </nav>
   </header>
 
-  <!-- メインコンテンツ -->
   <main class="site-main">
     {{ content }}
   </main>
 
-  <!-- フッター -->
   <footer class="site-footer">
     <div class="footer-inner container">
       <div class="footer-brand">
-        <span class="logo-icon">📱</span>
-        <span class="footer-title">{{ site.title }}</span>
+        <div class="navbar-logo">
+          <span class="logo-icon">📱</span>
+          <span class="footer-title">{{ site.title }}</span>
+        </div>
         <p class="footer-desc">{{ site.description }}</p>
       </div>
       <div class="footer-links">
@@ -77,7 +76,7 @@
     </div>
     <div class="footer-bottom">
       <div class="container">
-        <p class="footer-note">※本サイトはアフィリエイト広告（成果報酬型）を利用しています。</p>
+        <p class="footer-note">※本サイトはアフィリエイト広告を利用しています。</p>
         <p class="copyright">&copy; {{ 'now' | date: "%Y" }} {{ site.title }}. All rights reserved.</p>
       </div>
     </div>
